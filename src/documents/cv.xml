@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <etat_civil titre="M">
+        <prenom>Rémy</prenom>
+        <nom>Drouet</nom>
+        <naissance>20/11/1992</naissance>
+        <nationnalite>Français</nationnalite>
+    </etat_civil>
+    <coordonnees>
+        <adresse>
+            <numero>4</numero>
+            <nom voie="rue">Galilée</nom>
+            <CP>38400</CP>
+            <ville>Saint-Martin-d'Hères</ville>
+        </adresse>
+        <telephone>0683926286</telephone>
+        <mail>drouet.remy@gmail.com</mail>
+        <site_web>www.remy.drouet.fr</site_web>
+    </coordonnees>
+    <permis type="B"/>
+    <formations>
+        <formation>
+            <date_debut>15/09/2009</date_debut>
+            <date_fin>25/06/2010</date_fin>
+            <diplome type="BAC" mention="TB">
+                <intitule>Scientifique</intitule>
+                <option>Européenne Anglais Histoire Géographie</option>
+            </diplome>
+            <etablissement>
+                <nom>Lycée Marceau</nom>
+                <ville>Chartres</ville>
+            </etablissement>
+        </formation>
+        <formation>
+            <date_debut>15/09/2010</date_debut>
+            <date_fin>20/06/2012</date_fin>
+            <diplome type="Cycle préparatoire" mention="">
+                <intitule>Ecole d'ingénieur</intitule>
+            </diplome>
+            <etablissement>
+                <nom>INSA de Lyon</nom>
+                <ville>Villeurbanne</ville>
+            </etablissement>
+        </formation>
+        <formation>
+            <date_debut>15/09/2012</date_debut>
+            <date_fin>20/06/2013</date_fin>
+            <diplome type="DUT" mention="">
+                <intitule>Informatique Année Spéciale</intitule>
+            </diplome>
+            <etablissement>
+                <nom>IUT Lyon 1</nom>
+                <ville>Villeurbanne</ville>
+            </etablissement>
+        </formation>
+        <formation>
+            <date_debut>15/09/2013</date_debut>
+            <date_fin>25/04/2014</date_fin>
+            <diplome type="Licence" mention="">
+                <intitule>Informatique</intitule>
+            </diplome>
+            <etablissement>
+                <nom>Université Claude Bernard Lyon 1</nom>
+                <ville>Villeurbanne</ville>
+            </etablissement>
+        </formation>
+        <formation>
+            <date_debut>15/09/2013</date_debut>
+            <diplome type="Master" mention="">
+                <intitule>Web, informatique et connaissances</intitule>
+            </diplome>
+            <etablissement>
+                <nom>Université Pierre Mendès-France</nom>
+                <ville>Saint-Martin-d'Hères</ville>
+            </etablissement>
+        </formation>
+    </formations>
+    <experiences>
+        <stage>
+            <date_debut>23/06/2010</date_debut>
+            <date_fin>30/07/2010</date_fin>
+            <intitule>Stage ouvrier<Intitule>
+            <entreprise>
+                <nom>Lacie SAS</Nom>
+                <ville>Massy</ville>
+                <departement>91</departement>
+                <section>Zone retour fournisseurs</section>
+            </entreprise>
+            <description>Inventaire, transfert informatique, manutention</description>
+        </stage>
+        <stage>
+            <date_debut>23/06/2012</date_debut>
+            <date_fin>03/08/2012</date_fin>
+            <intitule>Stage Développeur Web<intitule>
+            <entreprise>
+                <nom>Plebicom</Nom>
+                <ville>Lyon</ville>
+                <departement>69</departement>
+                <section>Pôle développement</section>
+            </entreprise>
+            <description>Développement de pages web (en équipe) et d’une extension de navigateur (en autonomie)</description>
+        </stage>
+        <emploi>
+            <date_debut>2/08/2010</date_debut>
+            <date_fin>17/08/2010</date_fin>
+            <intitule>Emploi saisonnier</intitule>
+            <entreprise>
+                <nom>Lacie SAS</Nom>
+                <ville>Massy</ville>
+                <departement>91</departement>
+                <section>Zone de retour fournisseurs</section>
+            </entreprise>
+            <description>Inventaire, transfert informatique, manutention</description>
+        </emploi>
+        <emploi>
+            <date_debut>02/07/2011</date_debut>
+            <date_fin>15/08/2011</date_fin>
+            <intitule>Emploi saisonnier</intitule>
+            <entreprise>
+                <nom>SNCF</Nom>
+                <ville>Paris</ville>
+                <departement>75</departement>
+                <section>Bureau d'étude Infraingénérie Sud-Paris</section>
+            </entreprise>
+            <description>Inventaire et Archivage de schéma de ligne</description>
+        </emploi>
+        <emploi>
+            <date_debut>25/07/2014</date_debut>
+            <date_fin>29/08/2014</date_fin>
+            <intitule>Emploi saisonnier</intitule>
+            <entreprise>
+                <nom>SNCF</Nom>
+                <ville>Paris</ville>
+                <departement>75</departement>
+                <section>Bureau d'étude Infraingénérie Sud-Paris</section>
+            </entreprise>
+            <description>Inventaire et Archivage de schéma de ligne. Conception (2D et 3D) d'un plan d'aménagement.</description>
+        </emploi>
+    </experiences>
+    <competences>
+        <competence>
+            <nom>Languages de programmation</nom>
+            <details>C, C++, Java, PHP, JavaScript, HTML5, CSS3, UML, PL-SQL.</details>
+        </competence>
+        <competence>
+            <nom>Gestion de projet</nom>
+            <details>Merise, Agile</details>
+        </competence>
+        <competence>
+            <nom>Environnements</nom>
+            <details>
+                Connaissance des IDE Netbeans, Eclipse et PhpStorm.
+                Connaissances en réseau, architecture matérielle.
+                Maîtrise des environnements Unix, Windows XP, 7 et 8.
+                Notions des logiciels SAP, Solidedge, MatLab, Maple, Photoshop
+            </details>
+        </competence>
+        <langues>
+            <langue>
+                <nom>Anglais</nom>
+                <niveau>Lu +++ Parlé ++ Ecrit +++</niveau>
+            </langue>
+            <langue>
+                <Nom>Espagnol</Nom>
+                <niveau>Lu ++ Parlé + Ecrit +</niveau>
+            </langue>
+        </langues>
+    </competences>
+    <interets>
+        <interet>
+            <nom>Sports</nom>
+            <details>
+                    Tennis (6 ans), Roller-hockey, Natation, Apnée, …
+            </details>
+        </interet>
+        <interet>
+            <nom>Associatif</nom>
+            <details>
+                Ancien membre de l’équipe d’organisation du festival des 24h de l’INSA 
+                et actuel membre d’une association de Roller Hockey
+            </details>
+        </interet>
+    </interets>
+</CV>
