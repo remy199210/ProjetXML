@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="cv">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <xs:element name="etat_civil" type="xs:string">
+                    <xs:complexType>
+                        <xs:attribute name="titre" type="xs:string" use="required"/>
+                        <xs:sequence>
+                            <xs:element name="prenom" type="xs:string" minOccurs="1"/>
+                            <xs:element name="nom" type="xs:string" minOccurs="1" maxOccurs="3"/>
+                            <xs:element name="naissance" type="xs:string"/>
+                            <xs:element name="nationnalite" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="coordonnees" type="xs:string">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="adresse" type="xs:string">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="numero" type="xs:string"/>
+                                        <xs:element name="nom" type="xs:string">
+                                            <xs:attribute name="voie" type="xs:string"/>
+                                        </xs:element>
+                                        <xs:simpleContent name="CP" use="required">
+                                            <xs:restriction base="xs:integer">
+                                                <xs:totalDigits value="5"/>
+                                            </xs:restriction>
+                                        </xs:simpleContent>
+                                        <xs:element name="ville" type="xs:string" use="required"/>                                    
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:simpleContent name="telephone" use="required">
+                                <xs:restriction base="xs:integer">
+                                    <xs:length value="10"/>
+                                </xs:restriction>
+                            </xs:simpleContent>
+                            <xs:simpleContent name="mail" use="required">
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value=".+@.+\..+"/>
+                                </xs:restriction>
+                            </xs:simpleContent>
+                            <xs:element name="site_web" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="permis" type="xs:string"/>
+                
+                <xs:element name="formations" type="xs:string">
+                    <xs:complexType>
+                        <xs:element name="formation" type="xs:string">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="date_debut" type="xs:string"/>
+                                    <xs:element name="date_fin" type="xs:string"/>
+                                    <xs:element name="diplome" type="xs:string">
+                                        <xs:attribute name="type=" type="xs:string" use="required"/>
+                                        <xs:complexType>
+                                            <xs:element name="intitule" type="xs:string" use="required"/>                                    
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="etablissement" type="xs:string">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="nom" type="xs:string"/>
+                                                <xs:element name="ville" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="experiences" type="xs:string">
+                    <xs:complexType>
+                        <xs:element name="stage" type="xs:string">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="date_debut" type="xs:string"/>
+                                    <xs:element name="date_fin" type="xs:string"/>
+                                    <xs:element name="intitule" type="xs:string"/>
+                                    <xs:element name="entreprise" type="xs:string">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="nom" type="xs:string"/>
+                                                <xs:element name="ville" type="xs:string"/>
+                                                <xs:element name="departement" type="xs:string"/>
+                                                <xs:element name="section" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="description" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="emploi" type="xs:string">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="date_debut" type="xs:string"/>
+                                    <xs:element name="date_fin" type="xs:string"/>
+                                    <xs:element name="intitule" type="xs:string"/>
+                                    <xs:element name="entreprise" type="xs:string">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="nom" type="xs:string"/>
+                                                <xs:element name="ville" type="xs:string"/>
+                                                <xs:element name="departement" type="xs:string"/>
+                                                <xs:element name="section" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="description" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="competences" type="xs:string">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="competence" type="xs:string">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom" type="xs:string"/>
+                                        <xs:element name="details" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="langues" type="xs:string">
+                                <xs:complexType>
+                                    <xs:element name="langue" type="xs:string">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="nom" type="xs:string"/>
+                                                <xs:element name="niveau" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="interets" type="xs:string">
+                    <xs:complexType>
+                        <xs:element name="interet" type="xs:string">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="nom" type="xs:string"/>
+                                    <xs:element name="details" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:complexType>
+                </xs:element>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
