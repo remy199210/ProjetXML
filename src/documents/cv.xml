@@ -9,7 +9,8 @@
     <coordonnees>
         <adresse>
             <numero>4</numero>
-            <nom voie="rue">Galilée</nom>
+            <voie>rue</voie>
+            <nom>Galilée</nom>
             <CP>38400</CP>
             <ville>Saint-Martin-d'Hères</ville>
         </adresse>
@@ -18,7 +19,7 @@
         <site_web>www.remy.drouet.fr</site_web>
     </coordonnees>
     <permis type="B"/>
-    <formations>
+    <formations titre="Parcours Universitaire">
         <formation>
             <date_debut>15/09/2009</date_debut>
             <date_fin>25/06/2010</date_fin>
@@ -75,7 +76,7 @@
             </etablissement>
         </formation>
     </formations>
-    <experiences>
+    <experiences titre="Experiences Professionnelles">
         <stage>
             <date_debut>23/06/2010</date_debut>
             <date_fin>30/07/2010</date_fin>

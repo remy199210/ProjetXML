@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:ie="http://xml.insee.fr/schema"
+            targetNamespace="http://xml.netbeans.org/schema/schema"
+    xmlns:tns="http://xml.netbeans.org/schema/remy"
+    elementFormDefault="qualified">
+    <!--Simple Types-->
+    <xs:simpleType name="voie">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="rue"/>
+            <xs:enumeration value="impasse"/>
+            <xs:enumeration value="boulevard"/>
+            <xs:enumeration value="cours"/>
+            <xs:enumeration value="place"/>
+            <xs:enumeration value="allée"/>
+            <xs:enumeration value="avenue"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="departement">
+            <xs:restriction base="ie:CodeDepartementType">
+              <xs:enumeration value="01"
+                              dc:title="Ain"/>
+              <xs:enumeration value="02"
+                              dc:title="Aisne"/>
+              <xs:enumeration value="03"
+                              dc:title="Allier"/>
+              <xs:enumeration value="04"
+                              dc:title="Alpes-de-Haute-Provence"/>
+              <xs:enumeration value="05"
+                              dc:title="Hautes-Alpes"/>
+              <xs:enumeration value="06"
+                              dc:title="Alpes-Maritimes"/>
+              <xs:enumeration value="07"
+                              dc:title="Ardèche"/>
+              <xs:enumeration value="08"
+                              dc:title="Ardennes"/>
+              <xs:enumeration value="09"
+                              dc:title="Ariège"/>
+              <xs:enumeration value="10"
+                              dc:title="Aube"/>
+              <xs:enumeration value="11"
+                              dc:title="Aude"/>
+              <xs:enumeration value="12"
+                              dc:title="Aveyron"/>
+              <xs:enumeration value="13"
+                              dc:title="Bouches-du-Rhône"/>
+              <xs:enumeration value="14"
+                              dc:title="Calvados"/>
+              <xs:enumeration value="15"
+                              dc:title="Cantal"/>
+              <xs:enumeration value="16"
+                              dc:title="Charente"/>
+              <xs:enumeration value="17"
+                              dc:title="Charente-Maritime"/>
+              <xs:enumeration value="18"
+                              dc:title="Cher"/>
+              <xs:enumeration value="19"
+                              dc:title="Corrèze"/>
+              <xs:enumeration value="2A"
+                              dc:title="Corse-du-Sud"/>
+              <xs:enumeration value="2B"
+                              dc:title="Haute-Corse"/>
+              <xs:enumeration value="21"
+                              dc:title="Côte-d'Or"/>
+              <xs:enumeration value="22"
+                              dc:title="Côtes-d'Armor"/>
+              <xs:enumeration value="23"
+                              dc:title="Creuse"/>
+              <xs:enumeration value="24"
+                              dc:title="Dordogne"/>
+              <xs:enumeration value="25"
+                              dc:title="Doubs"/>
+              <xs:enumeration value="26"
+                              dc:title="Drôme"/>
+              <xs:enumeration value="27"
+                              dc:title="Eure"/>
+              <xs:enumeration value="28"
+                              dc:title="Eure-et-Loir"/>
+              <xs:enumeration value="29"
+                              dc:title="Finistère"/>
+              <xs:enumeration value="30"
+                              dc:title="Gard"/>
+              <xs:enumeration value="31"
+                              dc:title="Haute-Garonne"/>
+              <xs:enumeration value="32"
+                              dc:title="Gers"/>
+              <xs:enumeration value="33"
+                              dc:title="Gironde"/>
+              <xs:enumeration value="34"
+                              dc:title="Hérault"/>
+              <xs:enumeration value="35"
+                              dc:title="Ille-et-Vilaine"/>
+              <xs:enumeration value="36"
+                              dc:title="Indre"/>
+              <xs:enumeration value="37"
+                              dc:title="Indre-et-Loire"/>
+              <xs:enumeration value="38"
+                              dc:title="Isère"/>
+              <xs:enumeration value="39"
+                              dc:title="Jura"/>
+              <xs:enumeration value="40"
+                              dc:title="Landes"/>
+              <xs:enumeration value="41"
+                              dc:title="Loir-et-Cher"/>
+              <xs:enumeration value="42"
+                              dc:title="Loire"/>
+              <xs:enumeration value="43"
+                              dc:title="Haute-Loire"/>
+              <xs:enumeration value="44"
+                              dc:title="Loire-Atlantique"/>
+              <xs:enumeration value="45"
+                              dc:title="Loiret"/>
+              <xs:enumeration value="46"
+                              dc:title="Lot"/>
+              <xs:enumeration value="47"
+                              dc:title="Lot-et-Garonne"/>
+              <xs:enumeration value="48"
+                              dc:title="Lozère"/>
+              <xs:enumeration value="49"
+                              dc:title="Maine-et-Loire"/>
+              <xs:enumeration value="50"
+                              dc:title="Manche"/>
+              <xs:enumeration value="51"
+                              dc:title="Marne"/>
+              <xs:enumeration value="52"
+                              dc:title="Haute-Marne"/>
+              <xs:enumeration value="53"
+                              dc:title="Mayenne"/>
+              <xs:enumeration value="54"
+                              dc:title="Meurthe-et-Moselle"/>
+              <xs:enumeration value="55"
+                              dc:title="Meuse"/>
+              <xs:enumeration value="56"
+                              dc:title="Morbihan"/>
+              <xs:enumeration value="57"
+                              dc:title="Moselle"/>
+              <xs:enumeration value="58"
+                              dc:title="Nièvre"/>
+              <xs:enumeration value="59"
+                              dc:title="Nord"/>
+              <xs:enumeration value="60"
+                              dc:title="Oise"/>
+              <xs:enumeration value="61"
+                              dc:title="Orne"/>
+              <xs:enumeration value="62"
+                              dc:title="Pas-de-Calais"/>
+              <xs:enumeration value="63"
+                              dc:title="Puy-de-Dôme"/>
+              <xs:enumeration value="64"
+                              dc:title="Pyrénées-Atlantiques"/>
+              <xs:enumeration value="65"
+                              dc:title="Hautes-Pyrénées"/>
+              <xs:enumeration value="66"
+                              dc:title="Pyrénées-Orientales"/>
+              <xs:enumeration value="67"
+                              dc:title="Bas-Rhin"/>
+              <xs:enumeration value="68"
+                              dc:title="Haut-Rhin"/>
+              <xs:enumeration value="69"
+                              dc:title="Rhône"/>
+              <xs:enumeration value="70"
+                              dc:title="Haute-Saône"/>
+              <xs:enumeration value="71"
+                              dc:title="Saône-et-Loire"/>
+              <xs:enumeration value="72"
+                              dc:title="Sarthe"/>
+              <xs:enumeration value="73"
+                              dc:title="Savoie"/>
+              <xs:enumeration value="74"
+                              dc:title="Haute-Savoie"/>
+              <xs:enumeration value="75"
+                              dc:title="Paris"/>
+              <xs:enumeration value="76"
+                              dc:title="Seine-Maritime"/>
+              <xs:enumeration value="77"
+                              dc:title="Seine-et-Marne"/>
+              <xs:enumeration value="78"
+                              dc:title="Yvelines"/>
+              <xs:enumeration value="79"
+                              dc:title="Deux-Sèvres"/>
+              <xs:enumeration value="80"
+                              dc:title="Somme"/>
+              <xs:enumeration value="81"
+                              dc:title="Tarn"/>
+              <xs:enumeration value="82"
+                              dc:title="Tarn-et-Garonne"/>
+              <xs:enumeration value="83"
+                              dc:title="Var"/>
+              <xs:enumeration value="84"
+                              dc:title="Vaucluse"/>
+              <xs:enumeration value="85"
+                              dc:title="Vendée"/>
+              <xs:enumeration value="86"
+                              dc:title="Vienne"/>
+              <xs:enumeration value="87"
+                              dc:title="Haute-Vienne"/>
+              <xs:enumeration value="88"
+                              dc:title="Vosges"/>
+              <xs:enumeration value="89"
+                              dc:title="Yonne"/>
+              <xs:enumeration value="90"
+                              dc:title="Territoire de Belfort"/>
+              <xs:enumeration value="91"
+                              dc:title="Essonne"/>
+              <xs:enumeration value="92"
+                              dc:title="Hauts-de-Seine"/>
+              <xs:enumeration value="93"
+                              dc:title="Seine-Saint-Denis"/>
+              <xs:enumeration value="94"
+                              dc:title="Val-de-Marne"/>
+              <xs:enumeration value="95"
+                              dc:title="Val-d'Oise"/>
+              <xs:enumeration value="971"
+                              dc:title="Guadeloupe"/>
+              <xs:enumeration value="972"
+                              dc:title="Martinique"/>
+              <xs:enumeration value="973"
+                              dc:title="Guyane"/>
+              <xs:enumeration value="974"
+                              dc:title="Réunion"/>
+            </xs:restriction>
+          </xs:simpleType>
+    <xs:simpleType name="mention">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BIS"/>
+            <xs:enumeration value="TER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="telephone">
+        <xs:restriction base="xs:int">
+            <xs:totalDigits value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".+@.+\..+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!--Complex Types-->
+    <xs:complexType name="etat_civil">
+        <xs:sequence>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="naissance" type="xs:date"/>
+            <xs:element name="nationnalite" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="adresse">
+        <xs:sequence>
+            <xs:element name="numero" type="xs:int"></xs:element>
+            <xs:element name="mention" minOccurs="0" type="tns:mention"/>
+            <xs:element name="voie" type="tns:voie"/>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="CP"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="coordonnees">
+        <xs:sequence>
+            <xs:element name="adresse" type="tns:adresse"/>
+            <xs:element name="telephone" type="tns:telephone"/>
+            <xs:element name="mail" type="tns:email"/>
+            <xs:element name="site_web" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="formation">
+        <xs:sequence>
+            <xs:element name="date_debut" type="xs:date"/>
+            <xs:element name="date_fin" type="xs:date"/>
+            <xs:element name="diplome">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="intitule" type="xs:string"/>
+                        <xs:element name="option" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" type="xs:string"/>
+                    <xs:attribute name="mention" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="etablissement">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nom" type="xs:string"/>
+                        <xs:element name="ville" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="titre" type="xs:string" default=""/>
+    </xs:complexType>
+    <xs:complexType name="experience">
+        <xs:sequence>
+            <xs:element name="date_debut" type="xs:date"/>
+            <xs:element name="date_fin" type="xs:date"/>
+            <xs:element name="intitule" type="xs:string"/>
+            <xs:element name="entreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nom" type="xs:string"/>
+                        <xs:element name="ville" type="xs:string"/>
+                        <xs:element name="departement" type="tns:departement"/>
+                        <xs:element name="section" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="description"/>
+        </xs:sequence>
+        <xs:attribute name="titre" type="xs:string"/>
+    </xs:complexType>
+    
+    <xs:complexType name="divers">
+        <xs:sequence>
+            <xs:element name="nom"/>
+            <xs:element name="details"/>
+        </xs:sequence>
+        <xs:attribute name="titre" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="CV">
+        <xs:sequence>
+            <xs:element name="etat_civil" type="tns:etat_civil"/>
+            <xs:element name="coordonnees" type="tns:coordonnees"/>
+            <xs:element name="permis">
+                <xs:complexType>
+                    <xs:attribute name="type" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="formations">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="formation" type="tns:formation" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="titre" type="xs:string" default="Parcours Universitaire"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="experiences">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="experience" maxOccurs="unbounded" type="tns:experience"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="competences">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="competence" type="tns:divers" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="interets">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="interet" maxOccurs="unbounded" type="tns:divers"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CV" type="tns:CV"/>
+</xs:schema>
