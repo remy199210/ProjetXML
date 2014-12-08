@@ -13,7 +13,9 @@ and open the template in the editor.
             <xs:sequence>
                 
                 <xs:element name="etat_civil" type="xs:string">
+                    
                     <xs:complexType>
+                        
                         <xs:attribute name="titre" type="xs:string" use="required"/>
                         <xs:sequence>
                             <xs:element name="prenom" type="xs:string" minOccurs="1"/>
