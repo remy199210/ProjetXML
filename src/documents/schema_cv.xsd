@@ -21,6 +21,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="etat_civil" type="xs:string">
+                    
                     <xs:complexType>
                         <xs:attribute name="titre" type="xs:titre" use="optional"/>
                         <xs:sequence>
