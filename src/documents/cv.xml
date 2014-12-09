@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CV>
-    <etat_civil titre="M">
+
+<CV
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schemaCV.xsd">
+    <etat_civil>
         <prenom>Rémy</prenom>
         <nom>Drouet</nom>
         <naissance>20/11/1992</naissance>
@@ -67,6 +70,7 @@
         </formation>
         <formation>
             <date_debut>15/09/2013</date_debut>
+            <date_fin>25/04/2014</date_fin>
             <diplome type="Master" mention="">
                 <intitule>Web, informatique et connaissances</intitule>
             </diplome>
@@ -77,7 +81,7 @@
         </formation>
     </formations>
     <experiences titre="Experiences Professionnelles">
-        <stage>
+        <experience titre="stage">
             <date_debut>23/06/2010</date_debut>
             <date_fin>30/07/2010</date_fin>
             <intitule>Stage ouvrier</intitule>
@@ -88,8 +92,8 @@
                 <section>Zone retour fournisseurs</section>
             </entreprise>
             <description>Inventaire, transfert informatique, manutention</description>
-        </stage>
-        <stage>
+        </experience>
+        <experience titre="stage">
             <date_debut>23/06/2012</date_debut>
             <date_fin>03/08/2012</date_fin>
             <intitule>Stage Développeur Web</intitule>
@@ -100,9 +104,9 @@
                 <section>Pôle développement</section>
             </entreprise>
             <description>Développement de pages web (en équipe) et d’une extension de navigateur (en autonomie)</description>
-        </stage>
-        <emploi>
-            <date_debut>2/08/2010</date_debut>
+        </experience>
+        <experience titre="emploi">
+            <date_debut>02/08/2010</date_debut>
             <date_fin>17/08/2010</date_fin>
             <intitule>Emploi saisonnier</intitule>
             <entreprise>
@@ -112,8 +116,8 @@
                 <section>Zone de retour fournisseurs</section>
             </entreprise>
             <description>Inventaire, transfert informatique, manutention</description>
-        </emploi>
-        <emploi>
+        </experience>
+        <experience titre="emploi">
             <date_debut>02/07/2011</date_debut>
             <date_fin>15/08/2011</date_fin>
             <intitule>Emploi saisonnier</intitule>
@@ -124,8 +128,8 @@
                 <section>Bureau d'étude Infraingénérie Sud-Paris</section>
             </entreprise>
             <description>Inventaire et Archivage de schéma de ligne</description>
-        </emploi>
-        <emploi>
+        </experience>
+        <experience titre="emploi">
             <date_debut>25/07/2014</date_debut>
             <date_fin>29/08/2014</date_fin>
             <intitule>Emploi saisonnier</intitule>
@@ -136,7 +140,7 @@
                 <section>Bureau d'étude Infraingénérie Sud-Paris</section>
             </entreprise>
             <description>Inventaire et Archivage de schéma de ligne. Conception (2D et 3D) d'un plan d'aménagement.</description>
-        </emploi>
+        </experience>
     </experiences>
     <competences>
         <competence>
@@ -156,16 +160,14 @@
                 Notions des logiciels SAP, Solidedge, MatLab, Maple, Photoshop
             </details>
         </competence>
-        <langues>
-            <langue>
+        <competence titre="Langue">
                 <nom>Anglais</nom>
-                <niveau>Lu +++ Parlé ++ Ecrit +++</niveau>
-            </langue>
-            <langue>
-                <nom>Espagnol</nom>
-                <niveau>Lu ++ Parlé + Ecrit +</niveau>
-            </langue>
-        </langues>
+                <details>Lu +++ Parlé ++ Ecrit +++</details>
+        </competence>
+        <competence titre="Langue">
+            <nom>Espagnol</nom>
+            <details>Lu ++ Parlé + Ecrit +</details>
+        </competence>
     </competences>
     <interets>
         <interet>

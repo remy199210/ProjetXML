@@ -3,7 +3,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:ie="http://xml.insee.fr/schema"
             targetNamespace="http://xml.netbeans.org/schema/schema"
-    xmlns:tns="http://xml.netbeans.org/schema/remy"
+    xmlns:tns="http://xml.netbeans.org/schema/index"
     elementFormDefault="qualified">
     <!--Simple Types-->
     <xs:simpleType name="voie">
