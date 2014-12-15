@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
-
-    <xsl:template match="/CV">
-        <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0">
-        
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" version="1.0"/>
+    <xsl:template match="CV">
+        <office:document-content
+            xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
+            xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+            xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+            xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+        >
+            <office:automatic-styles>
+                <style:style style:family="paragraph" style:name="EC" style:parent-style-name="Normal"/>
+            </office:automatic-styles>
+            <office:body>
+                <office:text>
+                    <text:p text-style-name="EC"><xsl:value-of select="/etat_civil/prenom"/></text:p>
+                    <text:p text-style-name="EC"><xsl:value-of select="/etat_civil/nom"/></text:p>
+                    <text:p text-style-name="EC"><xsl:value-of select="/etat_civil/naissance"/></text:p>
+                    <text:p text-style-name="EC"><xsl:value-of select="/etat_civil/nationnalite"/></text:p>
+                </office:text>
+            </office:body>
         </office:document-content>
     </xsl:template>
-
 </xsl:stylesheet>
