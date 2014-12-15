@@ -6,23 +6,29 @@
         <html>
             <head>
                 <title>html.xsl</title>
-                <style type="txt/css">
+                <style type="text/css">
+                    p{
+                        margin: 0px;
+                        padding: 0px;
+                    }
                     .photo, .etat_civil{
                         display: inline-block;
                     }
                     .photo{
                         margin-right: 10px;
                     }
+                    
                 </style>
             </head>
             <body>
                 <div class="photo"><img src="" alt="photo de profil cv"/></div>
                 <div class="etat_civil">
-                    <p><xsl:value-of select="/etat_civil/prenom"/></p>
-                    <p><xsl:value-of select="/etat_civil/nom"/></p>
-                    <p><xsl:value-of select="/etat_civil/naissance"/></p>
-                    <p><xsl:value-of select="/etat_civil/nationnalite"/></p>
+                    <p><xsl:value-of select="etat_civil/prenom"/></p>
+                    <p><xsl:value-of select="etat_civil/nom"/></p>
+                    <p><xsl:value-of select="etat_civil/naissance"/></p>
+                    <p><xsl:value-of select="etat_civil/nationnalite"/></p>
                 </div>
+                <hr />
             </body>
         </html>
     </xsl:template>
