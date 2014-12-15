@@ -5,7 +5,7 @@
 
     <xsl:template match="/CV">
         <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0">
-        
+            
         </office:document-content>
     </xsl:template>
 
