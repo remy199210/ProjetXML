@@ -75,32 +75,101 @@
                     <div class="photo">
                         <img src="file:///C:/Users/Aliz%C3%A9e/Pictures/alizee.png" alt="photo de profil cv" />
                     </div>
-                    <h1><xsl:value-of select="etat_civil/prenom"/> <xsl:value-of select="etat_civil/nom"/></h1>
+                    <h1>
+                        <xsl:value-of select="etat_civil/prenom"/><xsl:text> </xsl:text><xsl:value-of select="etat_civil/nom"/>
+                    
+                </h1>
                     <div class="etat_civil">
                         <p><xsl:value-of select="etat_civil/naissance"/></p>
                         <p><xsl:value-of select="etat_civil/nationnalite"/></p>
-                        <p>167 rue de la savoyarde <br/> 73230 Saint Alban Leysse </p>
+                        <p><xsl:value-of select="coordonnees/adresse/numero"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/voie"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/nom"/> <br/> <xsl:value-of select="coordonnees/adresse/CP"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/ville"/> </p>
                     </div>
                     <div class="etat_civil2">
-                        <p>06.13.46.54.14</p>
-                        <p>arn.alizee@gmail.com</p>
-                        <p>http://alizee-arnaud.com</p>
-                        <p>Permis B</p>
+                        <p><xsl:value-of select="coordonnees/telephone"/></p>
+                        <p><xsl:value-of select="coordonnees/mail"/></p>
+                        <p><xsl:value-of select="coordonnees/site_web"/></p>
+                        <p>Permis <xsl:value-of select="permis/@type"/></p>
                     </div>
                     <div style="clear: both;"></div>
-                    <h2>Formation</h2>
-                    <div class="details">
-                        <p><span>09/09/2013 - 14/07/2014</span> Licence Pro METINET en Alternance - IUT Lyon 1, Bourg-en-Bresse</p>
-                    </div>
-                    <h2>Expériences Professionnelles</h2>
-                    <h3>Stage(s)</h3>
-                    <div class="details">
-                        <p><span>09/09/2013 - 14/07/2014</span> Alternance chez Applibox, Villefranche s/S (69) - Développeur EZ publish</p>
-                    </div>
-                    <h3>Emploi(s)</h3>
-                    <div class="details">
-                        <p><span>01/07/2013 - 31/07/2014</span> CDD dans l'agence 3c-evolution, Meylan (38) - Développeur Joomla!</p>
-                    </div>
+                    <h2><xsl:value-of select="formations/@titre"/></h2>
+                    
+                    <xsl:for-each select="formations/formation">
+                        <div class="details">
+                            <p>
+                                <span>
+                                    <xsl:value-of select="date_debut"/>
+                                    <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                    <xsl:value-of select="date_fin"/>
+                                </span> 
+                                <xsl:value-of select="diplome/@type"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:if test="diplome/@mention = true()">
+                                    mention:<xsl:text> </xsl:text>
+                                    <xsl:value-of select="diplome/@mention"/>
+                                </xsl:if>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="diplome/intitule"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="diplome/option"/> - <xsl:value-of select="etablissement/nom"/>, <xsl:value-of select="etablissement/ville"/>
+                            </p>
+                        </div>
+                    </xsl:for-each>
+                    
+                    <h2><xsl:value-of select="experiences/@titre"/></h2>
+                    <xsl:if test="experiences/experience[@titre = 'stage'] = true()">
+                        <h3>Stage(s)</h3>
+                        <xsl:for-each select="experiences/experience[@titre = 'stage']">
+                            <div class="details">
+                                <p>
+                                    <span>
+                                        <xsl:value-of select="date_debut"/>
+                                        <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                        <xsl:value-of select="date_fin"/>
+                                    </span>
+                                    <xsl:value-of select="intitule"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/nom"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/ville"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:text>(</xsl:text>
+                                    <xsl:value-of select="entreprise/departement"/>
+                                    <xsl:text>)</xsl:text>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/section"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="description"/>
+                                </p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="experiences/experience[@titre = 'emploi'] = true()">
+                        <h3>Emploi(s)</h3>
+                        <xsl:for-each select="experiences/experience[@titre = 'emploi']">
+                            <div class="details">
+                                <p>
+                                    <span>
+                                        <xsl:value-of select="date_debut"/>
+                                        <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                        <xsl:value-of select="date_fin"/>
+                                    </span>
+                                    <xsl:value-of select="intitule"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/nom"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/ville"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:text>(</xsl:text>
+                                    <xsl:value-of select="entreprise/departement"/>
+                                    <xsl:text>)</xsl:text>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/section"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="description"/>
+                                </p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
                     <h2>Compétences diverses</h2>
                     <h3>Compétences techniques</h3>
                     <div class="details">
