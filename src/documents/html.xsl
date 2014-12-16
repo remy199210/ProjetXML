@@ -94,7 +94,6 @@
                     <h2><xsl:value-of select="formations/@titre"/></h2>
                     
                     <xsl:for-each select="formations/formation">
-                        <!--<xsl:sort select="count(language)" order="descending"/>-->
                         <div class="details">
                             <p>
                                 <span>
@@ -116,15 +115,61 @@
                         </div>
                     </xsl:for-each>
                     
-                    <h2>Expériences Professionnelles</h2>
-                    <h3>Stage(s)</h3>
-                    <div class="details">
-                        <p><span>09/09/2013 - 14/07/2014</span> Alternance chez Applibox, Villefranche s/S (69) - Développeur EZ publish</p>
-                    </div>
-                    <h3>Emploi(s)</h3>
-                    <div class="details">
-                        <p><span>01/07/2013 - 31/07/2014</span> CDD dans l'agence 3c-evolution, Meylan (38) - Développeur Joomla!</p>
-                    </div>
+                    <h2><xsl:value-of select="experiences/@titre"/></h2>
+                    <xsl:if test="experiences/experience[@titre = 'stage'] = true()">
+                        <h3>Stage(s)</h3>
+                        <xsl:for-each select="experiences/experience[@titre = 'stage']">
+                            <div class="details">
+                                <p>
+                                    <span>
+                                        <xsl:value-of select="date_debut"/>
+                                        <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                        <xsl:value-of select="date_fin"/>
+                                    </span>
+                                    <xsl:value-of select="intitule"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/nom"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/ville"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:text>(</xsl:text>
+                                    <xsl:value-of select="entreprise/departement"/>
+                                    <xsl:text>)</xsl:text>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/section"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="description"/>
+                                </p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="experiences/experience[@titre = 'emploi'] = true()">
+                        <h3>Emploi(s)</h3>
+                        <xsl:for-each select="experiences/experience[@titre = 'emploi']">
+                            <div class="details">
+                                <p>
+                                    <span>
+                                        <xsl:value-of select="date_debut"/>
+                                        <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                        <xsl:value-of select="date_fin"/>
+                                    </span>
+                                    <xsl:value-of select="intitule"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/nom"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/ville"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:text>(</xsl:text>
+                                    <xsl:value-of select="entreprise/departement"/>
+                                    <xsl:text>)</xsl:text>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="entreprise/section"/>,
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="description"/>
+                                </p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
                     <h2>Compétences diverses</h2>
                     <h3>Compétences techniques</h3>
                     <div class="details">
