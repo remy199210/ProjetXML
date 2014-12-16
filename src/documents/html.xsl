@@ -22,7 +22,7 @@
                         font-weight: 300;
                         font-size: 40px;
                         margin-bottom: 0;
-                        padding: 46px 0px 0px 226px;
+                        padding: 46px 0px 0px 273px;
                     }
                     h2{
                         text-transform: uppercase;
@@ -73,7 +73,7 @@
             <body>
                 <div class="entete">
                     <div class="photo">
-                        <img src="file:///C:/Users/Aliz%C3%A9e/Pictures/alizee.png" alt="photo de profil cv" />
+                        <img src="{avatar}" alt="photo de profil cv" />
                     </div>
                     <h1>
                         <xsl:value-of select="etat_civil/prenom"/><xsl:text> </xsl:text><xsl:value-of select="etat_civil/nom"/>
@@ -86,8 +86,8 @@
                     </div>
                     <div class="etat_civil2">
                         <p><xsl:value-of select="coordonnees/telephone"/></p>
-                        <p><xsl:value-of select="coordonnees/mail"/></p>
-                        <p><xsl:value-of select="coordonnees/site_web"/></p>
+                        <p><a href="mailto:{coordonnees/mail}" ><xsl:value-of select="coordonnees/mail"/></a></p>
+                        <p><a href="{coordonnees/site_web}" ><xsl:value-of select="coordonnees/site_web"/></a></p>
                         <p>Permis <xsl:value-of select="permis/@type"/></p>
                     </div>
                     <div style="clear: both;"></div>
@@ -171,27 +171,30 @@
                         </xsl:for-each>
                     </xsl:if>
                     <h2>Compétences diverses</h2>
-                    <h3>Compétences techniques</h3>
-                    <div class="details">
-                        <p><span class="competences">Langages de programmation</span> Java, PHP, JavaScript, HTML5, CSS3, UML, PL-SQL...</p>
-                    </div>
-                    <div class="details">
-                        <p><span class="competences">Environnement</span> Connaissance des IDE Netbeans, Eclipse et PhpStorm.
-                            Connaissances en réseau, architecture matérielle.
-                            Maîtrise des environnements Unix, Windows XP, 7 et 8.
-                            Notions des logiciels SAP, Solidedge, MatLab, Maple, Photoshop</p>
-                    </div>
-                    <h3>Langue(s) parlé(es)</h3>
-                    <div class="details">
-                        <p><span class="competences">Italien</span>Lu +++ Parlé +++ Ecrit +++</p>
-                    </div>
-                    <div class="details">
-                        <p><span class="competences">Anglais</span>Lu ++ Parlé + Ecrit ++</p>
-                    </div>
-                    <h2>Intérêts</h2>
-                    <div class="details">
-                        <p><span class="interets">Judo</span>Ceinture noire, pratique depuis 16ans</p>
-                    </div>
+                    <xsl:if test="competences/competence[@titre != 'Langue'] = true()">
+                        <h3>Compétences techniques</h3>
+                        <xsl:for-each select="competences/competence[@titre != true()]">
+                            <div class="details">
+                                <p><span class="competences"><xsl:value-of select="nom"/></span> <xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="competences/competence[@titre = 'Langue'] = true()">
+                        <h3>Langue(s) parlé(es)</h3>
+                        <xsl:for-each select="competences/competence[@titre = 'Langue']">
+                            <div class="details">
+                                <p><span class="competences"><xsl:value-of select="nom"/></span><xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="interets/interet = true()">
+                        <h2>Intérêts</h2>
+                        <xsl:for-each select="interets/interet">
+                            <div class="details">
+                                <p><span class="interets"><xsl:value-of select="nom"/></span><xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
                 </div>
             </body>
         </html>

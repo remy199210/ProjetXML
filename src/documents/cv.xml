@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="schemaCV.xsd">
     <etat_civil>
-        <prenom>Rémy</prenom>
-        <nom>Drouet</nom>
+        <prenom>Pika</prenom>
+        <nom>Chu</nom>
         <naissance>20/11/1992</naissance>
         <nationnalite>Français</nationnalite>
     </etat_civil>
@@ -18,10 +18,11 @@
             <ville>Saint-Martin-d'Hères</ville>
         </adresse>
         <telephone>0683926286</telephone>
-        <mail>drouet.remy@gmail.com</mail>
-        <site_web>www.remy.drouet.fr</site_web>
+        <mail>pika.chu@gmail.com</mail>
+        <site_web>http://pikachu.fr</site_web>
     </coordonnees>
     <permis type="B"/>
+    <avatar>http://img3.wikia.nocookie.net/__cb20130117163044/pokemon/pt/images/7/77/Pikachu.png</avatar>
     <formations titre="Parcours Universitaire">
         <formation>
             <date_debut>15/09/2009</date_debut>

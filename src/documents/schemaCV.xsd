@@ -5,6 +5,12 @@
     
     <xs:element name="CV" type="CV"/>
 <!--Simple Types-->
+    <xs:simpleType name="site_web">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="http://.*" />
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:simpleType name="CP">
         <xs:restriction base="xs:string">
             <xs:length value="5"/>
@@ -170,7 +176,7 @@
             <xs:element name="adresse" type="adresse"/>
             <xs:element name="telephone" type="telephone"/>
             <xs:element name="mail" type="email"/>
-            <xs:element name="site_web" type="xs:string"/>
+            <xs:element name="site_web" type="site_web"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="formation">
@@ -234,6 +240,7 @@
                     <xs:attribute name="type" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="avatar"/>
             <xs:element name="formations">
                 <xs:complexType>
                     <xs:sequence>
