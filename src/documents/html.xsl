@@ -22,7 +22,7 @@
                         font-weight: 300;
                         font-size: 40px;
                         margin-bottom: 0;
-                        padding: 46px 0px 0px 226px;
+                        padding: 46px 0px 0px 273px;
                     }
                     h2{
                         text-transform: uppercase;
@@ -73,7 +73,7 @@
             <body>
                 <div class="entete">
                     <div class="photo">
-                        <img src="file:///C:/Users/Aliz%C3%A9e/Pictures/alizee.png" alt="photo de profil cv" />
+                        <img src="{avatar}" alt="photo de profil cv" />
                     </div>
                     <h1>
                         <xsl:value-of select="etat_civil/prenom"/><xsl:text> </xsl:text><xsl:value-of select="etat_civil/nom"/>
@@ -86,8 +86,8 @@
                     </div>
                     <div class="etat_civil2">
                         <p><xsl:value-of select="coordonnees/telephone"/></p>
-                        <p><xsl:value-of select="coordonnees/mail"/></p>
-                        <p><xsl:value-of select="coordonnees/site_web"/></p>
+                        <p><a href="mailto:{coordonnees/mail}" ><xsl:value-of select="coordonnees/mail"/></a></p>
+                        <p><a href="{coordonnees/site_web}" ><xsl:value-of select="coordonnees/site_web"/></a></p>
                         <p>Permis <xsl:value-of select="permis/@type"/></p>
                     </div>
                     <div style="clear: both;"></div>
