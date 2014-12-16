@@ -75,7 +75,10 @@
                     <div class="photo">
                         <img src="file:///C:/Users/Aliz%C3%A9e/Pictures/alizee.png" alt="photo de profil cv" />
                     </div>
-                    <h1><xsl:value-of select="etat_civil/prenom"/> <xsl:value-of select="etat_civil/nom"/></h1>
+                    <h1>
+                        <xsl:value-of select="etat_civil/prenom"/><xsl:text> </xsl:text><xsl:value-of select="etat_civil/nom"/>
+                    
+                </h1>
                     <div class="etat_civil">
                         <p><xsl:value-of select="etat_civil/naissance"/></p>
                         <p><xsl:value-of select="etat_civil/nationnalite"/></p>
