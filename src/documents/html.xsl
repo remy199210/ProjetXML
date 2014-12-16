@@ -171,27 +171,30 @@
                         </xsl:for-each>
                     </xsl:if>
                     <h2>Compétences diverses</h2>
-                    <h3>Compétences techniques</h3>
-                    <div class="details">
-                        <p><span class="competences">Langages de programmation</span> Java, PHP, JavaScript, HTML5, CSS3, UML, PL-SQL...</p>
-                    </div>
-                    <div class="details">
-                        <p><span class="competences">Environnement</span> Connaissance des IDE Netbeans, Eclipse et PhpStorm.
-                            Connaissances en réseau, architecture matérielle.
-                            Maîtrise des environnements Unix, Windows XP, 7 et 8.
-                            Notions des logiciels SAP, Solidedge, MatLab, Maple, Photoshop</p>
-                    </div>
-                    <h3>Langue(s) parlé(es)</h3>
-                    <div class="details">
-                        <p><span class="competences">Italien</span>Lu +++ Parlé +++ Ecrit +++</p>
-                    </div>
-                    <div class="details">
-                        <p><span class="competences">Anglais</span>Lu ++ Parlé + Ecrit ++</p>
-                    </div>
-                    <h2>Intérêts</h2>
-                    <div class="details">
-                        <p><span class="interets">Judo</span>Ceinture noire, pratique depuis 16ans</p>
-                    </div>
+                    <xsl:if test="competences/competence[@titre != 'Langue'] = true()">
+                        <h3>Compétences techniques</h3>
+                        <xsl:for-each select="competences/competence[@titre != true()]">
+                            <div class="details">
+                                <p><span class="competences"><xsl:value-of select="nom"/></span> <xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="competences/competence[@titre = 'Langue'] = true()">
+                        <h3>Langue(s) parlé(es)</h3>
+                        <xsl:for-each select="competences/competence[@titre = 'Langue']">
+                            <div class="details">
+                                <p><span class="competences"><xsl:value-of select="nom"/></span><xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="interets/interet = true()">
+                        <h2>Intérêts</h2>
+                        <xsl:for-each select="interets/interet">
+                            <div class="details">
+                                <p><span class="interets"><xsl:value-of select="nom"/></span><xsl:value-of select="details"/></p>
+                            </div>
+                        </xsl:for-each>
+                    </xsl:if>
                 </div>
             </body>
         </html>
