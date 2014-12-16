@@ -82,19 +82,40 @@
                     <div class="etat_civil">
                         <p><xsl:value-of select="etat_civil/naissance"/></p>
                         <p><xsl:value-of select="etat_civil/nationnalite"/></p>
-                        <p>167 rue de la savoyarde <br/> 73230 Saint Alban Leysse </p>
+                        <p><xsl:value-of select="coordonnees/adresse/numero"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/voie"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/nom"/> <br/> <xsl:value-of select="coordonnees/adresse/CP"/><xsl:text> </xsl:text><xsl:value-of select="coordonnees/adresse/ville"/> </p>
                     </div>
                     <div class="etat_civil2">
-                        <p>06.13.46.54.14</p>
-                        <p>arn.alizee@gmail.com</p>
-                        <p>http://alizee-arnaud.com</p>
-                        <p>Permis B</p>
+                        <p><xsl:value-of select="coordonnees/telephone"/></p>
+                        <p><xsl:value-of select="coordonnees/mail"/></p>
+                        <p><xsl:value-of select="coordonnees/site_web"/></p>
+                        <p>Permis <xsl:value-of select="permis/@type"/></p>
                     </div>
                     <div style="clear: both;"></div>
-                    <h2>Formation</h2>
-                    <div class="details">
-                        <p><span>09/09/2013 - 14/07/2014</span> Licence Pro METINET en Alternance - IUT Lyon 1, Bourg-en-Bresse</p>
-                    </div>
+                    <h2><xsl:value-of select="formations/@titre"/></h2>
+                    
+                    <xsl:for-each select="formations/formation">
+                        <!--<xsl:sort select="count(language)" order="descending"/>-->
+                        <div class="details">
+                            <p>
+                                <span>
+                                    <xsl:value-of select="date_debut"/>
+                                    <xsl:text> </xsl:text>-<xsl:text> </xsl:text>
+                                    <xsl:value-of select="date_fin"/>
+                                </span> 
+                                <xsl:value-of select="diplome/@type"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:if test="diplome/@mention = true()">
+                                    mention:<xsl:text> </xsl:text>
+                                    <xsl:value-of select="diplome/@mention"/>
+                                </xsl:if>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="diplome/intitule"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="diplome/option"/> - <xsl:value-of select="etablissement/nom"/>, <xsl:value-of select="etablissement/ville"/>
+                            </p>
+                        </div>
+                    </xsl:for-each>
+                    
                     <h2>Expériences Professionnelles</h2>
                     <h3>Stage(s)</h3>
                     <div class="details">
