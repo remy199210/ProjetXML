@@ -38,8 +38,8 @@
 </text:sequence-decls>
 <text:p text:style-name="Standard">
 <draw:frame draw:name="images1" draw:style-name="fr1" draw:z-index="0" svg:height="5.029cm" svg:width="3.537cm" text:anchor-type="paragraph">
-<draw:image xlink:actuate="onLoad" xlink:href="Pictures/10000000000000F40000015B76E1ED0B.png" xlink:show="embed" xlink:type="simple"/>
-</draw:frame>Rémy Drouet</text:p>
+<draw:image xlink:actuate="onLoad" xlink:href="http://img3.wikia.nocookie.net/__cb20130117163044/pokemon/pt/images/7/77/Pikachu.png" xlink:show="embed" xlink:type="simple"/>
+</draw:frame>Pika Chu</text:p>
 <text:p text:style-name="Standard">20/11/1992</text:p>
 <text:p text:style-name="Standard">Français</text:p>
 <text:p text:style-name="Standard"/>
@@ -47,54 +47,70 @@
 <text:p text:style-name="Standard">38400 Saint-Martin-d'Hères</text:p>
 <text:p text:style-name="Standard"/>
 <text:p text:style-name="Standard">
-<text:a text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link" xlink:href="drouet.remy@gmail.com" xlink:type="simple">drouet.remy@gmail.com</text:a>
+<text:a text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link" xlink:href="pika.chu@gmail.com" xlink:type="simple">pika.chu@gmail.com</text:a>
 </text:p>
 <text:p text:style-name="Standard">Permis B</text:p>
 <text:p text:style-name="Standard"/>
 <text:p text:style-name="Standard"/>
-<text:h text:outline-level="2" text:style-name="Heading_20_2"/>
+<text:h text:outline-level="2" text:style-name="Heading_20_2">Parcours Universitaire</text:h>
 <text:p text:style-name="Text_20_body">15/09/2009 – 25/06/2010</text:p>
-<text:p text:style-name="Text_20_body">
-                            BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres
-                             Scientifique 
-                                 - Européenne Anglais Histoire Géographie
-                             - 
-                             - </text:p>
+<text:p text:style-name="Text_20_body">BAC 
+                                    mention : 
+                                TB Scientifique Européenne Anglais Histoire Géographie - Lycée Marceau, Chartres</text:p>
 <text:p text:style-name="Text_20_body">15/09/2010 – 20/06/2012</text:p>
-<text:p text:style-name="Text_20_body">
-                            BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres
-                             Ecole d'ingénieur 
-                             - 
-                             - </text:p>
+<text:p text:style-name="Text_20_body">Cycle préparatoire 
+                                    mention : 
+                                 Ecole d'ingénieur  - INSA de Lyon, Villeurbanne</text:p>
 <text:p text:style-name="Text_20_body">15/09/2012 – 20/06/2013</text:p>
-<text:p text:style-name="Text_20_body">
-                            BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres
-                             Informatique Année Spéciale 
-                             - 
-                             - </text:p>
+<text:p text:style-name="Text_20_body">DUT 
+                                    mention : 
+                                 Informatique Année Spéciale  - IUT Lyon 1, Villeurbanne</text:p>
 <text:p text:style-name="Text_20_body">15/09/2013 – 25/04/2014</text:p>
-<text:p text:style-name="Text_20_body">
-                            BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres
-                             Informatique 
-                             - 
-                             - </text:p>
+<text:p text:style-name="Text_20_body">Licence 
+                                    mention : 
+                                 Informatique  - Université Claude Bernard Lyon 1, Villeurbanne</text:p>
 <text:p text:style-name="Text_20_body">15/09/2013 – 25/04/2014</text:p>
-<text:p text:style-name="Text_20_body">
-                            BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres
-                             Web, informatique et connaissances 
-                             - 
-                             - </text:p>
-<text:h text:outline-level="2" text:style-name="Heading_20_2">Experiences Professionnelles</text:h>
-<text:h text:outline-level="3" text:style-name="P3">Stage(s)</text:h>
-<text:p text:style-name="Text_20_body">23/06/2010 – 30/07/2010</text:p>
-<text:p text:style-name="Text_20_body">Stage ouvrier - Lacie SAS – Massy (91) - Zone retour fournisseurs</text:p>
+<text:p text:style-name="Text_20_body">Master 
+                                    mention : 
+                                 Web, informatique et connaissances  - Université Pierre Mendès-France, Saint-Martin-d'Hères</text:p>
+<text:h text:outline-level="2" text:style-name="Heading_20_2">Stages</text:h>
+<text:h text:outline-level="3" text:style-name="P3"/>
+<text:p text:style-name="Text_20_body">23/06/2010 - 30/07/2010</text:p>
+<text:p text:style-name="Text_20_body">Stage ouvrier Lacie SAS,
+                                 Massy (91) Zone retour fournisseurs</text:p>
 <text:p text:style-name="Text_20_body">Inventaire, transfert informatique, manutention</text:p>
-<text:h text:outline-level="3" text:style-name="P3">Emploi(s)</text:h>
+<text:h text:outline-level="3" text:style-name="P3"/>
+<text:p text:style-name="Text_20_body">23/06/2012 - 03/08/2012</text:p>
+<text:p text:style-name="Text_20_body">Stage Développeur Web Plebicom,
+                                 Lyon (69) Pôle développement</text:p>
+<text:p text:style-name="Text_20_body">Développement de pages web (en équipe) et d’une extension de navigateur (en autonomie)</text:p>
+<text:h text:outline-level="3" text:style-name="P3">Emplois</text:h>
 <text:p text:style-name="Text_20_body">
-<text:span text:style-name="T1">25/07/2014 – 29/08/2014</text:span>
+<text:span text:style-name="T1">02/08/2010 - 17/08/2010</text:span>
 </text:p>
 <text:p text:style-name="Text_20_body">
-<text:span text:style-name="T1">Emploi saisonnier – SNCF – Paris (75) - Bureau d'étude Infraingénérie Sud-Paris</text:span>
+<text:span text:style-name="T1"> Lacie SAS,
+                                 Massy (91) Zone de retour fournisseurs</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1">Inventaire, transfert informatique, manutention</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1">02/07/2011 - 15/08/2011</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1"> SNCF,
+                                 Paris (75) Bureau d'étude Infraingénérie Sud-Paris</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1">Inventaire et Archivage de schéma de ligne</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1">25/07/2014 - 29/08/2014</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1"> SNCF,
+                                 Paris (75) Bureau d'étude Infraingénérie Sud-Paris</text:span>
 </text:p>
 <text:p text:style-name="Text_20_body">
 <text:span text:style-name="T1">Inventaire et Archivage de schéma de ligne. Conception (2D et 3D) d'un plan d'aménagement.</text:span>
@@ -102,12 +118,30 @@
 <text:h text:outline-level="2" text:style-name="P2">Compétences</text:h>
 <text:p text:style-name="P1">Languages de programmation</text:p>
 <text:p text:style-name="P1">C, C++, Java, PHP, JavaScript, HTML5, CSS3, UML, PL-SQL.</text:p>
+<text:p text:style-name="P1">Gestion de projet</text:p>
+<text:p text:style-name="P1">Merise, Agile</text:p>
+<text:p text:style-name="P1">Environnements</text:p>
+<text:p text:style-name="P1">
+                Connaissance des IDE Netbeans, Eclipse et PhpStorm.
+                Connaissances en réseau, architecture matérielle.
+                Maîtrise des environnements Unix, Windows XP, 7 et 8.
+                Notions des logiciels SAP, Solidedge, MatLab, Maple, Photoshop
+            </text:p>
 <text:h text:outline-level="3" text:style-name="P3">Langues</text:h>
 <text:p text:style-name="Text_20_body">
-<text:span text:style-name="T1">Espagnol - Lu ++ Parlé + Ecrit +</text:span>
+<text:span text:style-name="T1">Anglais : Lu +++ Parlé ++ Ecrit +++</text:span>
+</text:p>
+<text:p text:style-name="Text_20_body">
+<text:span text:style-name="T1">Espagnol : Lu ++ Parlé + Ecrit +</text:span>
 </text:p>
 <text:h text:outline-level="2" text:style-name="P2">Intérêts</text:h>
-<text:p text:style-name="P1">Sports - Tennis (6 ans), Roller-hockey, Natation, Apnée, …</text:p>
+<text:p text:style-name="P1">Sports : 
+                    Tennis (6 ans), Roller-hockey, Natation, Apnée, …
+            </text:p>
+<text:p text:style-name="P1">Associatif : 
+                Ancien membre de l’équipe d’organisation du festival des 24h de l’INSA 
+                et actuel membre d’une association de Roller Hockey
+            </text:p>
 </office:text>
 </office:body>
 </office:document-content>
