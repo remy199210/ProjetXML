@@ -101,15 +101,19 @@
                             draw:style-name="fr1" draw:z-index="0"
                             svg:height="5.029cm" svg:width="3.537cm" text:anchor-type="paragraph">
                             <draw:image xlink:actuate="onLoad"
-                                xlink:href="Pictures/10000000000000F40000015B76E1ED0B.png"
+                                xlink:href="{avatar}"
                                 xlink:show="embed" xlink:type="simple"/>
                         </draw:frame>
                         <xsl:value-of select="etat_civil/prenom"/>
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="etat_civil/nom"/>
                     </text:p>
-                    <text:p text:style-name="Standard"><xsl:value-of select="etat_civil/naissance"/></text:p>
-                    <text:p text:style-name="Standard"><xsl:value-of select="etat_civil/nationnalite"/></text:p>
+                    <text:p text:style-name="Standard">
+                        <xsl:value-of select="etat_civil/naissance"/>
+                    </text:p>
+                    <text:p text:style-name="Standard">
+                        <xsl:value-of select="etat_civil/nationnalite"/>
+                    </text:p>
                     <text:p text:style-name="Standard"/>
                     <text:p text:style-name="Standard">
                         <xsl:value-of select="coordonnees/adresse/numero"/>
@@ -127,38 +131,122 @@
                     <text:p text:style-name="Standard">
                         <text:a text:style-name="Internet_20_link"
                             text:visited-style-name="Visited_20_Internet_20_Link"
-                            xlink:href="<xsl:value-of select="coordonnees/mail"/>" xlink:type="simple"><xsl:value-of select="coordonnees/mail"/></text:a>
+                            xlink:href="{coordonnees/mail}" xlink:type="simple">
+                            <xsl:value-of select="coordonnees/mail"/>
+                        </text:a>
                     </text:p>
-                    <text:p text:style-name="Standard">Permis : B</text:p>
+                    <text:p
+                            text:style-name="Standard">Permis <xsl:value-of select="permis/@type"/>
+                    </text:p>
                     <text:p text:style-name="Standard"/>
                     <text:p text:style-name="Standard"/>
-                    <text:h text:outline-level="2" text:style-name="Heading_20_2">Parcours universitaire</text:h>
-                    <text:p text:style-name="Text_20_body">15/09/2009 – 25/06/2010</text:p>
-                    <text:p text:style-name="Text_20_body">BAC Scientifique TB - Européenne Anglais Histoire Géographie - Lycée Marceau – Chartres</text:p>
-                    <text:h text:outline-level="2" text:style-name="Heading_20_2">Experiences Professionnelles</text:h>
-                    <text:h text:outline-level="3" text:style-name="P3">Stage(s)</text:h>
-                    <text:p text:style-name="Text_20_body">23/06/2010 – 30/07/2010</text:p>
-                    <text:p text:style-name="Text_20_body">Stage ouvrier - Lacie SAS – Massy (91) - Zone retour fournisseurs</text:p>
-                    <text:p text:style-name="Text_20_body">Inventaire, transfert informatique, manutention</text:p>
-                    <text:h text:outline-level="3" text:style-name="P3">Emploi(s)</text:h>
-                    <text:p text:style-name="Text_20_body">
-                        <text:span text:style-name="T1">25/07/2014 – 29/08/2014</text:span>
-                    </text:p>
-                    <text:p text:style-name="Text_20_body">
-                        <text:span text:style-name="T1">Emploi saisonnier – SNCF – Paris (75) - Bureau d'étude Infraingénérie Sud-Paris</text:span>
-                    </text:p>
-                    <text:p text:style-name="Text_20_body">
-                        <text:span text:style-name="T1">Inventaire et Archivage de schéma de ligne. Conception (2D et 3D) d'un plan d'aménagement.</text:span>
-                    </text:p>
+                    <text:h text:outline-level="2" text:style-name="Heading_20_2">
+                        <xsl:value-of select="formations/@titre"/>
+                    </text:h>
+                    <xsl:for-each select="formations/formation">
+                        <text:p text:style-name="Text_20_body">
+                            <xsl:value-of
+                                select="date_debut"/> – <xsl:value-of select="date_fin"/>
+                        </text:p>
+                        <text:p text:style-name="Text_20_body">
+                            <xsl:value-of select="diplome/@type"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:if test="diplome/@mention = true()">
+                                    mention : 
+                                <xsl:value-of select="diplome/@mention"/>
+                            </xsl:if>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="diplome/intitule"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of
+                                select="diplome/option"/> - <xsl:value-of
+                                select="etablissement/nom"/>, <xsl:value-of select="etablissement/ville"/>
+                        </text:p>
+                    </xsl:for-each>
+                    <text:h text:outline-level="2" text:style-name="Heading_20_2">
+                        <xsl:if test="experiences/experience[@titre = 'stage'] = true()">Stage</xsl:if>
+                        <xsl:if test="count(experiences/experience[@titre = 'stage'])&gt;1">s</xsl:if>
+                    </text:h>
+                    <xsl:for-each select="experiences/experience[@titre = 'stage']">
+                        <text:h text:outline-level="3" text:style-name="P3">
+                        </text:h>
+                        <text:p text:style-name="Text_20_body">
+                            <xsl:value-of select="date_debut"/>
+                            <xsl:text> - </xsl:text>
+                            <xsl:value-of select="date_fin"/>
+                        </text:p>
+                        <text:p text:style-name="Text_20_body">
+                            <xsl:value-of select="intitule"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/nom"/>,
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/ville"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:text>(</xsl:text>
+                                <xsl:value-of select="entreprise/departement"/>
+                                <xsl:text>)</xsl:text>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/section"/>
+                        </text:p>
+                        <text:p text:style-name="Text_20_body"><xsl:value-of select="description"/></text:p>
+                    </xsl:for-each>
+                    <text:h text:outline-level="3" text:style-name="P3">
+                        <xsl:if test="experiences/experience[@titre = 'emploi'] = true()">Emploi</xsl:if>
+                        <xsl:if test="count(experiences/experience[@titre = 'emploi'])&gt;1">s</xsl:if>
+                    </text:h>
+                    <xsl:for-each select="experiences/experience[@titre = 'emploi']">
+                        <text:p text:style-name="Text_20_body">
+                        <text:span text:style-name="T1">
+                            <xsl:value-of select="date_debut"/>
+                            <xsl:text> - </xsl:text>
+                            <xsl:value-of select="date_fin"/>
+                        </text:span>
+                        </text:p>
+                        <text:p text:style-name="Text_20_body">
+                            <text:span text:style-name="T1">
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/nom"/>,
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/ville"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:text>(</xsl:text>
+                                <xsl:value-of select="entreprise/departement"/>
+                                <xsl:text>)</xsl:text>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="entreprise/section"/>
+                            </text:span>
+                        </text:p>
+                        <text:p text:style-name="Text_20_body">
+                            <text:span text:style-name="T1"><xsl:value-of select="description"/></text:span>
+                        </text:p>
+                    </xsl:for-each>
                     <text:h text:outline-level="2" text:style-name="P2">Compétences</text:h>
-                    <text:p text:style-name="P1">Languages de programmation</text:p>
-                    <text:p text:style-name="P1">C, C++, Java, PHP, JavaScript, HTML5, CSS3, UML, PL-SQL.</text:p>
-                    <text:h text:outline-level="3" text:style-name="P3">Langues</text:h>
-                    <text:p text:style-name="Text_20_body">
-                        <text:span text:style-name="T1">Espagnol - Lu ++ Parlé + Ecrit +</text:span>
-                    </text:p>
-                    <text:h text:outline-level="2" text:style-name="P2">Intérêts</text:h>
-                    <text:p text:style-name="P1">Sports - Tennis (6 ans), Roller-hockey, Natation, Apnée, …</text:p>
+                    <xsl:for-each select="competences/competence[@titre != true()]">
+                        <text:p text:style-name="P1"><xsl:value-of select="nom"/></text:p>
+                        <text:p text:style-name="P1"><xsl:value-of select="details"/></text:p>
+                    </xsl:for-each>
+                    <xsl:if test="competences/competence[@titre = 'Langue'] = true()">
+                        <text:h text:outline-level="3" text:style-name="P3">Langues</text:h>
+                        <xsl:for-each select="competences/competence[@titre = 'Langue']">
+                            <text:p text:style-name="Text_20_body">
+                                <text:span text:style-name="T1">
+                                    <xsl:value-of select="nom"/>
+                                    <xsl:text> : </xsl:text>
+                                    <xsl:value-of select="details"/>
+                                </text:span>
+                            </text:p>
+                        </xsl:for-each>
+                    </xsl:if>
+                    <xsl:if test="interets/interet = true()">
+                        <text:h text:outline-level="2" text:style-name="P2">Intérêts</text:h>
+                        <xsl:for-each select="interets/interet">
+                            <text:p text:style-name="P1">
+                                <xsl:value-of select="nom"/>
+                                <xsl:text> : </xsl:text>
+                                <xsl:value-of select="details"/>
+                            </text:p>
+                        </xsl:for-each>
+                    </xsl:if>
                 </office:text>
             </office:body>
         </office:document-content>
