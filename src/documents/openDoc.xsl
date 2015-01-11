@@ -49,6 +49,14 @@
                     style:font-pitch="variable" style:name="SimSun" svg:font-family="SimSun"/>
             </office:font-face-decls>
             <office:automatic-styles>
+                <style:style style:name="titre_5f_rubrique" style:display-name="titre_rubrique" style:family="paragraph" style:class="text">
+                    <style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.499cm" fo:padding="0.049cm" fo:border-left="none" fo:border-right="none" fo:border-top="0.002cm solid #000000" fo:border-bottom="0.002cm solid #000000" style:shadow="none"/>
+                    <style:text-properties style:font-name="Arial" fo:font-size="14pt" fo:font-style="italic" fo:font-weight="bold"/>
+                </style:style>
+                <style:style style:name="sous-titre-perso" style:family="paragraph" style:default-outline-level="" style:list-style-name="" style:class="text">
+                    <style:paragraph-properties fo:margin-top="0.2cm" fo:margin-bottom="0.1cm"/>
+                    <style:text-properties style:font-name="Arial" fo:font-weight="bold"/>
+                </style:style>
                 <style:style style:family="paragraph" style:name="P1" style:parent-style-name="Text_20_body">
                     <style:text-properties fo:font-size="12pt"
                         style:font-size-asian="12pt" style:font-size-complex="12pt"/>
@@ -140,15 +148,15 @@
                     </text:p>
                     <text:p text:style-name="Standard"/>
                     <text:p text:style-name="Standard"/>
-                    <text:h text:outline-level="2" text:style-name="Heading_20_2">
+                    <text:p text:style-name="titre_5f_rubrique">
                         <xsl:value-of select="formations/@titre"/>
-                    </text:h>
+                    </text:p>
                     <xsl:for-each select="formations/formation">
                         <text:p text:style-name="Text_20_body">
                             <xsl:value-of
                                 select="date_debut"/> – <xsl:value-of select="date_fin"/>
                         </text:p>
-                        <text:p text:style-name="Text_20_body">
+                        <text:p text:vstyle-name="Text_20_body">
                             <xsl:value-of select="diplome/@type"/>
                             <xsl:text> </xsl:text>
                             <xsl:if test="diplome/@mention = true()">
@@ -163,13 +171,14 @@
                                 select="etablissement/nom"/>, <xsl:value-of select="etablissement/ville"/>
                         </text:p>
                     </xsl:for-each>
-                    <text:h text:outline-level="2" text:style-name="Heading_20_2">
+                    <text:p text:style-name="titre_5f_rubrique">
+                        <xsl:value-of select="experiences/@titre"/>
+                    </text:p>
+                    <text:p text:style-name="sous-titre-perso">
                         <xsl:if test="experiences/experience[@titre = 'stage'] = true()">Stage</xsl:if>
                         <xsl:if test="count(experiences/experience[@titre = 'stage'])&gt;1">s</xsl:if>
-                    </text:h>
+                    </text:p>
                     <xsl:for-each select="experiences/experience[@titre = 'stage']">
-                        <text:h text:outline-level="3" text:style-name="P3">
-                        </text:h>
                         <text:p text:style-name="Text_20_body">
                             <xsl:value-of select="date_debut"/>
                             <xsl:text> - </xsl:text>
@@ -190,10 +199,10 @@
                         </text:p>
                         <text:p text:style-name="Text_20_body"><xsl:value-of select="description"/></text:p>
                     </xsl:for-each>
-                    <text:h text:outline-level="3" text:style-name="P3">
+                    <text:p text:style-name="sous-titre-perso">
                         <xsl:if test="experiences/experience[@titre = 'emploi'] = true()">Emploi</xsl:if>
                         <xsl:if test="count(experiences/experience[@titre = 'emploi'])&gt;1">s</xsl:if>
-                    </text:h>
+                    </text:p>
                     <xsl:for-each select="experiences/experience[@titre = 'emploi']">
                         <text:p text:style-name="Text_20_body">
                         <text:span text:style-name="T1">
@@ -220,13 +229,13 @@
                             <text:span text:style-name="T1"><xsl:value-of select="description"/></text:span>
                         </text:p>
                     </xsl:for-each>
-                    <text:h text:outline-level="2" text:style-name="P2">Compétences</text:h>
+                    <text:p text:style-name="titre_5f_rubrique">Compétences</text:p>
                     <xsl:for-each select="competences/competence[@titre != true()]">
                         <text:p text:style-name="P1"><xsl:value-of select="nom"/></text:p>
                         <text:p text:style-name="P1"><xsl:value-of select="details"/></text:p>
                     </xsl:for-each>
                     <xsl:if test="competences/competence[@titre = 'Langue'] = true()">
-                        <text:h text:outline-level="3" text:style-name="P3">Langues</text:h>
+                        <text:p text:style-name="sous-titre-perso">Langues</text:p>
                         <xsl:for-each select="competences/competence[@titre = 'Langue']">
                             <text:p text:style-name="Text_20_body">
                                 <text:span text:style-name="T1">
@@ -238,7 +247,7 @@
                         </xsl:for-each>
                     </xsl:if>
                     <xsl:if test="interets/interet = true()">
-                        <text:h text:outline-level="2" text:style-name="P2">Intérêts</text:h>
+                        <text:p text:style-name="titre_5f_rubrique">Intérêts</text:p>
                         <xsl:for-each select="interets/interet">
                             <text:p text:style-name="P1">
                                 <xsl:value-of select="nom"/>
